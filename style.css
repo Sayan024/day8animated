@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(19, 19, 30);
+    width: 100%;
+}
+@property --arr{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+.box{
+    position: relative;
+    width: 400px;
+    height: 200px;
+    background: repeating-conic-gradient(from var(--arr), #ff2770 0%,#ff2770 5%, transparent 5%,transparent 40%, #ff2770 50%);
+    filter: drop-shadow(0 15px 50px #000);
+    border-radius: 20px;
+    animation: rotating 4s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+.box:hover{
+    width: 400px;
+    height: 500px;
+}
+@keyframes rotating{
+    0%{
+        --arr:0deg;
+    }
+    100%{
+        --arr:360deg;
+    }
+}
+.box::before{
+    content: '';
+    position:absolute ;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from var(--arr), #00f3ca 0%,#00f3ca 5%, transparent 5%,transparent 40%, #00f3ca 50%);
+    filter: drop-shadow(0 15px 50px #000);
+    border-radius: 20px;
+    animation: rotating 4s linear infinite;
+}
+.box::after{
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background-color: #010345;
+    border-radius: 15px;
+    border: 8px solid #010345;
+}
+.login{
+    position: absolute;
+    inset :60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .2);
+    z-index: 1000;
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, .5) ;
+    border-bottom:  2px solid rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
+    color: azure;
+    overflow: hidden;
+}
+.box:hover .login{
+    inset: 40px;
+}
+.loginbox{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 70%;
+    transition: 0.5s;
+    transform: translateY(145px);
+}
+.loginbox:hover{
+    transform: translateY(0);
+}
+.loginbox h2{
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #27fffb;
+    text-shadow: 0 0 5px #27fffb, 0 0 35px #27fffb;
+}
+.loginbox h2 i{
+    color: #27fffb;
+    text-shadow: 0 0 5px #27fffb, 0 0 35px #27fffb;
+}
+.loginbox input{
+    width: 100%;
+    padding: 10px 20px;
+    outline:  none;
+    border:  none;
+    font-size: 1em;
+    color:  #fff;
+    background-color: #010345;
+    border: 2px solid salmon ;
+    border-radius: 30px;
+    box-shadow: 0 0 5px salmon, 0 0 5px     box-shadow: 0 0 5px #salmon, 0 0 5px #27fffb;    ;
+}
+.loginbox input[type='submit']{
+    background-color: #1900ff;
+    color: #ffffff;
+    border: 2px solid rgb(255, 255, 255) ;
+    cursor: pointer;
+    transition: .5s;
+}
+.loginbox input[type='submit']:hover{
+    background-color: #00fff7;
+    color: #ffffff;
+    
+}
+.btns{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.btns a{
+    color: #fff;
+    text-decoration: none;
+}
+.btns a:nth-child(2){
+    color: #ff2770 ;
+    font-weight: 600;
+}
